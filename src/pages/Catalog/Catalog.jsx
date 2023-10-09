@@ -1,8 +1,14 @@
+import { useEffect, useState } from 'react';
+import CatalogFilter from 'components/CatalogFilter/CatalogFilter';
+import CatalogList from 'components/CatalogList/CatalogList';
+import { CatalogContainer } from './Catalog.style';
+
 const Catalog = () => {
   return (
-    <>
-      <h1>Catalog 100%</h1>
-    </>
+    <CatalogContainer>
+      <CatalogFilter />
+      <CatalogList />
+    </CatalogContainer>
   );
 };
 
