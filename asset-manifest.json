@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/tech-task-goit/static/css/main.02b3e9d2.css",
-    "main.js": "/tech-task-goit/static/js/main.328d7c9e.js",
-    "static/js/859.dade3ce5.chunk.js": "/tech-task-goit/static/js/859.dade3ce5.chunk.js",
-    "static/js/113.eef9db55.chunk.js": "/tech-task-goit/static/js/113.eef9db55.chunk.js",
-    "static/js/396.06d818a2.chunk.js": "/tech-task-goit/static/js/396.06d818a2.chunk.js",
+    "main.js": "/tech-task-goit/static/js/main.9d76eb32.js",
+    "static/js/101.3dd1ac37.chunk.js": "/tech-task-goit/static/js/101.3dd1ac37.chunk.js",
+    "static/js/113.7905b402.chunk.js": "/tech-task-goit/static/js/113.7905b402.chunk.js",
+    "static/js/396.102d8d62.chunk.js": "/tech-task-goit/static/js/396.102d8d62.chunk.js",
     "static/js/134.881ada5e.chunk.js": "/tech-task-goit/static/js/134.881ada5e.chunk.js",
     "static/js/243.2c31f64b.chunk.js": "/tech-task-goit/static/js/243.2c31f64b.chunk.js",
     "index.html": "/tech-task-goit/index.html",
     "main.02b3e9d2.css.map": "/tech-task-goit/static/css/main.02b3e9d2.css.map",
-    "main.328d7c9e.js.map": "/tech-task-goit/static/js/main.328d7c9e.js.map",
-    "859.dade3ce5.chunk.js.map": "/tech-task-goit/static/js/859.dade3ce5.chunk.js.map",
-    "113.eef9db55.chunk.js.map": "/tech-task-goit/static/js/113.eef9db55.chunk.js.map",
-    "396.06d818a2.chunk.js.map": "/tech-task-goit/static/js/396.06d818a2.chunk.js.map",
+    "main.9d76eb32.js.map": "/tech-task-goit/static/js/main.9d76eb32.js.map",
+    "101.3dd1ac37.chunk.js.map": "/tech-task-goit/static/js/101.3dd1ac37.chunk.js.map",
+    "113.7905b402.chunk.js.map": "/tech-task-goit/static/js/113.7905b402.chunk.js.map",
+    "396.102d8d62.chunk.js.map": "/tech-task-goit/static/js/396.102d8d62.chunk.js.map",
     "134.881ada5e.chunk.js.map": "/tech-task-goit/static/js/134.881ada5e.chunk.js.map",
     "243.2c31f64b.chunk.js.map": "/tech-task-goit/static/js/243.2c31f64b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.02b3e9d2.css",
-    "static/js/main.328d7c9e.js"
+    "static/js/main.9d76eb32.js"
   ]
 }
