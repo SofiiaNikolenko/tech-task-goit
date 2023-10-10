@@ -81,4 +81,12 @@ export const FormFilterButton = styled.button`
   border-radius: 12px;
   width: 136px;
   height: 46px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0b44cd;
+  }
+  &:focus {
+    background-color: #0b44cd;
+  }
 `;

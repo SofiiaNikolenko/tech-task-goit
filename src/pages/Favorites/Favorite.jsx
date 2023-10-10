@@ -1,7 +1,9 @@
+import FavoriteList from 'components/FavoriteList/FavoriteList';
+
 const Favorite = () => {
   return (
     <>
-      <h1> Favorite 100 % </h1>
+      <FavoriteList />
     </>
   );
 };

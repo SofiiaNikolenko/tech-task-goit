@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
-export const CatalogItem = styled.li`
+export const FavoriteItem = styled.li`
   width: 274px;
 `;
 
@@ -11,25 +10,6 @@ export const ImgContainer = styled.div`
   width: 274px;
   height: 268px;
   overflow: hidden;
-`;
-
-export const HeartIcon = styled(AiFillHeart)`
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 18px;
-  height: 18px;
-  color: #3470ff;
-  cursor: pointer;
-`;
-
-export const HeartIconBorder = styled(AiOutlineHeart)`
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
 `;
 
 export const ItemImg = styled.img`

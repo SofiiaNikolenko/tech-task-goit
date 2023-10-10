@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const ListWrapper = styled.div`
+export const FavoriteListWrapper = styled.div`
   width: 1184px;
   margin: 0 auto;
-  margin-bottom: 100px;
+  margin-top: 35px;
 `;
 
-export const CatalogListUl = styled.ul`
+export const FavoriteListUl = styled.ul`
   display: flex;
   flex-wrap: wrap;
   row-gap: 50px;
