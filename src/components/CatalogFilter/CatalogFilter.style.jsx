@@ -7,6 +7,7 @@ export const CatalogFormFilter = styled.form`
   align-items: flex-end;
   gap: 18px;
 
+  margin-top: 15px;
   margin-bottom: 50px;
 `;
 
@@ -32,7 +33,7 @@ export const FormFilterSelect = styled.select`
   background-color: #f7f7fb;
   width: 224px;
 
-  padding: 14px 0px 14px 18px;
+  padding: 11px 0px 11px 18px;
   border-radius: 14px;
   border: none;
 `;

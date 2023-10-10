@@ -91,6 +91,13 @@ export const ItemInfoSecond = styled.div`
   gap: 6px;
 `;
 
+export const TextLimit = styled.p`
+  max-width: 104px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
 export const ItemButton = styled.button`
   font-family: Manrope;
   font-size: 14px;

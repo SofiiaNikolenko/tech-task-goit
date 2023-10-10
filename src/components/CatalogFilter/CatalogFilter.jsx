@@ -11,14 +11,16 @@ import {
 } from './CatalogFilter.style';
 
 const CatalogFilter = () => {
+  const rentPrice = [25, 30, 35, 40, 45, 50, 55, 75, 150, 200, 250, 300, 500];
+
   return (
     <>
       <CatalogFormFilter autoComplete="on">
         <ContainerLabel>
           <FormFilterLabel htmlFor="carBrand">Car brand</FormFilterLabel>
           <FormFilterSelect id="carBrand" name="carBrand">
-            <FormFilterOption value="" disabled defaultValue>
-              Оберіть опцію
+            <FormFilterOption value="All breands" disabled defaultValue>
+              All breands
             </FormFilterOption>
             <FormFilterOption value="option1">Опція 1</FormFilterOption>
             <FormFilterOption value="option2">Опція 2</FormFilterOption>
@@ -29,9 +31,14 @@ const CatalogFilter = () => {
         <ContainerLabel>
           <FormFilterLabel htmlFor="price">Price/ 1 hour</FormFilterLabel>
           <FormFilterSelect id="price" name="price" style={{ width: '125px' }}>
-            <FormFilterOption value="price1">30</FormFilterOption>
-            <FormFilterOption value="price2">40</FormFilterOption>
-            <FormFilterOption value="price3">50</FormFilterOption>
+            <FormFilterOption value="To $" disabled defaultValue>
+              To $
+            </FormFilterOption>
+            {rentPrice?.map(item => (
+              <FormFilterOption key={item} value={item}>
+                {item}
+              </FormFilterOption>
+            ))}
           </FormFilterSelect>
         </ContainerLabel>
 

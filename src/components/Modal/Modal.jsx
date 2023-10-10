@@ -5,6 +5,7 @@ import {
   Overlay,
   ModalDiv,
   Close,
+  ImgContainer,
   ItemImg,
   ItemTitleName,
   ItemInfo,
@@ -64,7 +65,13 @@ const Modal = ({ onClose, advert }) => {
     <Overlay onClick={handleBackdropClick}>
       <ModalDiv>
         <Close onClick={onClose} />
-        <ItemImg src={img} alt={`${make} ${model}`} />
+
+        <ImgContainer>
+          <div>
+            <ItemImg src={img} alt={`${make} ${model}`} />
+          </div>
+        </ImgContainer>
+
         <div style={{ marginBottom: '24px' }}>
           <ItemTitleName>
             <p>{make}</p>

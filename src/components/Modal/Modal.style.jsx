@@ -31,9 +31,16 @@ export const Close = styled(AiOutlineClose)`
   cursor: pointer;
 `;
 
-export const ItemImg = styled.img`
+export const ImgContainer = styled.div`
   border-radius: 14px;
   margin-bottom: 14px;
+  width: 461px;
+  height: 248px;
+  overflow: hidden;
+`;
+
+export const ItemImg = styled.img`
+  object-fit: cover;
 `;
 
 export const ItemTitleName = styled.div`

@@ -13,6 +13,7 @@ import {
   ItemInfo,
   ItemInfoFirst,
   ItemInfoSecond,
+  TextLimit,
   ItemButton,
 } from './CatalogListItem.style';
 
@@ -92,8 +93,8 @@ const CatalogListItem = ({ advert }) => {
         </ImgContainer>
         <ItemTitle>
           <ItemTitleName>
-            <p>{make}</p>
-            <p style={{ color: '#3470ff' }}>{model}</p>
+            <TextLimit>{make}</TextLimit>
+            <TextLimit style={{ color: '#3470ff' }}>{model}</TextLimit>
             <p>{year}</p>
           </ItemTitleName>
           <p>{rentalPrice}</p>
@@ -104,18 +105,18 @@ const CatalogListItem = ({ advert }) => {
             <span>|</span>
             <p>{addressParts[addressParts.length - 1].trim()}</p>
             <span>|</span>
-            <p>{rentalCompany}</p>
+            <TextLimit>{rentalCompany}</TextLimit>
             <span>|</span>
             <p>Premium</p>
           </ItemInfoFirst>
           <ItemInfoSecond>
             <p>{type}</p>
             <span>|</span>
-            <p>{model}</p>
+            <TextLimit>{model}</TextLimit>
             <span>|</span>
             <p>{mileage}</p>
             <span>|</span>
-            <p>{functionalities[0]}</p>
+            <TextLimit>{functionalities[0]}</TextLimit>
           </ItemInfoSecond>
         </ItemInfo>
         <ItemButton onClick={openModal}>Learn more</ItemButton>
