@@ -7,17 +7,7 @@ const CatalogList = ({ adverts }) => {
     <ListWrapper>
       <CatalogListUl>
         {adverts.map(advert => (
-          <CatalogListItem
-            key={advert.id}
-            img={advert.img}
-            make={advert.make}
-            model={advert.model}
-            year={advert.year}
-            rentalPrice={advert.rentalPrice}
-            rentalCompany={advert.rentalCompany}
-            type={advert.type}
-            mileage={advert.mileage}
-          />
+          <CatalogListItem key={advert.id} advert={advert} />
         ))}
       </CatalogListUl>
     </ListWrapper>

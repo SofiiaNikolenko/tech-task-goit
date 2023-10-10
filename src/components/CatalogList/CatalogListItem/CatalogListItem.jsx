@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Modal from 'components/Modal/Modal';
 
 import {
   CatalogItem,
@@ -15,17 +16,23 @@ import {
   ItemButton,
 } from './CatalogListItem.style';
 
-const CatalogListItem = ({
-  img,
-  make,
-  model,
-  year,
-  rentalPrice,
-  rentalCompany,
-  type,
-  mileage,
-}) => {
+const CatalogListItem = ({ advert }) => {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const {
+    id,
+    year,
+    make,
+    model,
+    type,
+    img,
+    functionalities,
+    rentalPrice,
+    rentalCompany,
+    address,
+    mileage,
+  } = advert;
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -44,13 +51,16 @@ const CatalogListItem = ({
       localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     } else {
       const favoriteItem = {
+        id,
+        year,
         make,
         model,
+        type,
         img,
-        year,
+        functionalities,
         rentalPrice,
         rentalCompany,
-        type,
+        address,
         mileage,
       };
       const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -59,6 +69,12 @@ const CatalogListItem = ({
     }
     setIsFavorite(!isFavorite);
   };
+
+  const openModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const addressParts = address ? address.split(',') : [];
 
   return (
     <>
@@ -84,9 +100,9 @@ const CatalogListItem = ({
         </ItemTitle>
         <ItemInfo>
           <ItemInfoFirst>
-            <p>Location</p>
+            <p>{addressParts[1].trim()}</p>
             <span>|</span>
-            <p>Country</p>
+            <p>{addressParts[addressParts.length - 1].trim()}</p>
             <span>|</span>
             <p>{rentalCompany}</p>
             <span>|</span>
@@ -99,10 +115,11 @@ const CatalogListItem = ({
             <span>|</span>
             <p>{mileage}</p>
             <span>|</span>
-            <p>Feature</p>
+            <p>{functionalities[0]}</p>
           </ItemInfoSecond>
         </ItemInfo>
-        <ItemButton>Learn more</ItemButton>
+        <ItemButton onClick={openModal}>Learn more</ItemButton>
+        {isModalOpen && <Modal onClose={openModal} advert={advert} />}
       </CatalogItem>
     </>
   );

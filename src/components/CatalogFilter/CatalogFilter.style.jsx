@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const CatalogFormFilter = styled.form`
+  font-family: Manrope;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -81,7 +82,6 @@ export const FormFilterButton = styled.button`
   border-radius: 12px;
   width: 136px;
   height: 46px;
-  cursor: pointer;
 
   &:hover {
     background-color: #0b44cd;

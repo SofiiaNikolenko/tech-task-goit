@@ -15,6 +15,7 @@ export const ImgContainer = styled.div`
 
 export const HeartIcon = styled(AiFillHeart)`
   position: absolute;
+  z-index: 100;
   top: 18px;
   right: 18px;
   width: 18px;
@@ -25,11 +26,13 @@ export const HeartIcon = styled(AiFillHeart)`
 
 export const HeartIconBorder = styled(AiOutlineHeart)`
   position: absolute;
+  z-index: 100;
   top: 18px;
   right: 18px;
   width: 18px;
   height: 18px;
   cursor: pointer;
+  color: white;
 `;
 
 export const ItemImg = styled.img`
@@ -100,7 +103,6 @@ export const ItemButton = styled.button`
   border: none;
   border-radius: 12px;
   width: 100%;
-  cursor: pointer;
 
   &:hover {
     background-color: #0b44cd;

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { FavoriteListWrapper, FavoriteListUl } from './FavoriteList.style';
-import FavoriteListItem from './FavoriteListItem/FavoriteListItem';
+import {
+  FavoriteListWrapper,
+  FavoriteListUl,
+  NoCar,
+} from './FavoriteList.style';
+import CatalogListItem from 'components/CatalogList/CatalogListItem/CatalogListItem';
 
 const FavoriteList = () => {
   const [favoriteItems, setFavoriteItems] = useState([]);
@@ -12,21 +16,15 @@ const FavoriteList = () => {
 
   return (
     <FavoriteListWrapper>
-      <FavoriteListUl>
-        {favoriteItems.map((item, index) => (
-          <FavoriteListItem
-            key={index}
-            img={item.img}
-            make={item.make}
-            model={item.model}
-            year={item.year}
-            rentalPrice={item.rentalPrice}
-            rentalCompany={item.rentalCompany}
-            type={item.type}
-            mileage={item.mileage}
-          />
-        ))}
-      </FavoriteListUl>
+      {favoriteItems.length === 0 ? (
+        <NoCar>No selected cars</NoCar>
+      ) : (
+        <FavoriteListUl>
+          {favoriteItems.map((advert, index) => (
+            <CatalogListItem key={index} advert={advert} />
+          ))}
+        </FavoriteListUl>
+      )}
     </FavoriteListWrapper>
   );
 };
