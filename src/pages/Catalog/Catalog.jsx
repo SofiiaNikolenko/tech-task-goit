@@ -34,17 +34,25 @@ const Catalog = () => {
     setVisibleAdverts(prevVisibleAdverts => prevVisibleAdverts + 8);
   };
 
-  const filteredAdvertsByBrand =
+  const priceTolerance = 10; // Діапазон терпимості в ціні, наприклад, +-10
+
+  const filteredAdverts =
     selectedBrand === 'All brands'
       ? adverts
       : adverts.filter(ad => ad.make === selectedBrand);
 
   const filteredAdvertsByPrice =
     selectedPrice === 'To $'
-      ? filteredAdvertsByBrand
-      : filteredAdvertsByBrand.filter(ad => {
+      ? filteredAdverts
+      : filteredAdverts.filter(ad => {
+          if (ad.rentalPrice === 'To $') {
+            return true;
+          }
           const rentalPrice = parseFloat(ad.rentalPrice.replace('$', ''));
-          return rentalPrice === parseFloat(selectedPrice.replace('$', ''));
+          const priceDifference = Math.abs(
+            rentalPrice - parseFloat(selectedPrice.replace('$', ''))
+          );
+          return priceDifference <= priceTolerance;
         });
 
   return (

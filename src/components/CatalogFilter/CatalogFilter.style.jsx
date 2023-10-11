@@ -36,9 +36,22 @@ export const FormFilterSelect = styled.select`
   padding: 11px 0px 11px 18px;
   border-radius: 14px;
   border: none;
+
+  &:hover {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
 `;
 
-export const FormFilterOption = styled.option``;
+export const FormFilterOption = styled.option`
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+
+  color: rgba(18, 20, 23, 0.2);
+`;
 
 export const ContainerInput = styled.div`
   display: flex;
@@ -47,6 +60,8 @@ export const ContainerInput = styled.div`
 `;
 
 export const FormFilterInput = styled.input`
+  -webkit-appearance: none;
+  appearance: none;
   font-size: 18px;
   font-weight: 500;
   line-height: 20px;
@@ -58,6 +73,18 @@ export const FormFilterInput = styled.input`
   border-radius: 14px 0px 0px 14px;
   border: none;
   border-right: 1px solid #8a8a8933;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    display: none;
+  }
+
+  &:hover {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const InputText = styled.span`

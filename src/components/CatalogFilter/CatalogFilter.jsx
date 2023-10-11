@@ -44,7 +44,13 @@ const CatalogFilter = ({
     'Kia',
     'Land',
   ];
-  const rentPrice = [25, 30, 35, 40, 45, 50, 55, 75, 150, 200, 250, 300, 500];
+
+  const rentPrice = [
+    30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180,
+    190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330,
+    340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480,
+    490, 500,
+  ];
 
   const applyFilter = e => {
     e.preventDefault();
@@ -101,15 +107,18 @@ const CatalogFilter = ({
             Car mileage / km
             <ContainerInput>
               <div style={{ position: 'relative' }}>
-                <FormFilterInput type="text" id="from" name="from" />
+                <FormFilterInput type="number" id="from" name="from" />
                 <InputText>From</InputText>
               </div>
               <div style={{ position: 'relative' }}>
                 <FormFilterInput
-                  type="text"
+                  type="number"
                   id="to"
                   name="to"
-                  style={{ borderRadius: '0px 14px 14px 0px', border: 'none' }}
+                  style={{
+                    borderRadius: '0px 14px 14px 0px',
+                    border: 'none',
+                  }}
                 />
                 <InputText>To</InputText>
               </div>
