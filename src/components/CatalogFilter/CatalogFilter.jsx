@@ -17,9 +17,16 @@ const CatalogFilter = ({
   setSelectedBrand,
   selectedPrice,
   setSelectedPrice,
+  selectedFrom,
+  setSelectedFrom,
+  selectedTo,
+  setSelectedTo,
 }) => {
   const [tempSelectedBrand, setTempSelectedBrand] = useState(selectedBrand);
   const [tempSelectedPrice, setTempSelectedPrice] = useState(selectedPrice);
+
+  const [fromValue, setFromValue] = useState(selectedFrom);
+  const [toValue, setToValue] = useState(selectedTo);
 
   const carBrands = [
     'Buick',
@@ -54,10 +61,10 @@ const CatalogFilter = ({
 
   const applyFilter = e => {
     e.preventDefault();
-    console.log('In filter brand', tempSelectedBrand);
-    console.log('In filter price', tempSelectedPrice);
     setSelectedBrand(tempSelectedBrand);
     setSelectedPrice(tempSelectedPrice);
+    setSelectedFrom(fromValue);
+    setSelectedTo(toValue);
   };
 
   return (
@@ -107,7 +114,13 @@ const CatalogFilter = ({
             Car mileage / km
             <ContainerInput>
               <div style={{ position: 'relative' }}>
-                <FormFilterInput type="number" id="from" name="from" />
+                <FormFilterInput
+                  type="number"
+                  id="from"
+                  name="from"
+                  value={fromValue}
+                  onChange={e => setFromValue(e.target.value)}
+                />
                 <InputText>From</InputText>
               </div>
               <div style={{ position: 'relative' }}>
@@ -115,9 +128,12 @@ const CatalogFilter = ({
                   type="number"
                   id="to"
                   name="to"
+                  value={toValue}
+                  onChange={e => setToValue(e.target.value)}
                   style={{
                     borderRadius: '0px 14px 14px 0px',
                     border: 'none',
+                    paddingLeft: '53px',
                   }}
                 />
                 <InputText>To</InputText>

@@ -15,7 +15,8 @@ const Catalog = () => {
   const [selectedBrand, setSelectedBrand] = useState('All brands');
   const [selectedPrice, setSelectedPrice] = useState('To $');
 
-  console.log('In catalog brands', selectedBrand);
+  const [selectedFrom, setSelectedFrom] = useState('');
+  const [selectedTo, setSelectedTo] = useState('');
 
   useEffect(() => {
     axios
@@ -34,17 +35,17 @@ const Catalog = () => {
     setVisibleAdverts(prevVisibleAdverts => prevVisibleAdverts + 8);
   };
 
-  const priceTolerance = 10; // Діапазон терпимості в ціні, наприклад, +-10
+  const priceTolerance = 10;
 
-  const filteredAdverts =
+  const filteredAdvertsByBrand =
     selectedBrand === 'All brands'
       ? adverts
       : adverts.filter(ad => ad.make === selectedBrand);
 
   const filteredAdvertsByPrice =
     selectedPrice === 'To $'
-      ? filteredAdverts
-      : filteredAdverts.filter(ad => {
+      ? filteredAdvertsByBrand
+      : filteredAdvertsByBrand.filter(ad => {
           if (ad.rentalPrice === 'To $') {
             return true;
           }
@@ -55,6 +56,18 @@ const Catalog = () => {
           return priceDifference <= priceTolerance;
         });
 
+  const filteredAdvertsByMileage = filteredAdvertsByPrice.filter(ad => {
+    if (!selectedFrom || !selectedTo) {
+      return true;
+    }
+
+    const mileage = parseInt(ad.mileage, 10);
+    const from = parseInt(selectedFrom, 10);
+    const to = parseInt(selectedTo, 10);
+
+    return mileage >= from && mileage <= to;
+  });
+
   return (
     <CatalogContainer>
       <CatalogFilter
@@ -62,11 +75,18 @@ const Catalog = () => {
         setSelectedBrand={setSelectedBrand}
         selectedPrice={selectedPrice}
         setSelectedPrice={setSelectedPrice}
+        selectedFrom={selectedFrom}
+        setSelectedFrom={setSelectedFrom}
+        selectedTo={selectedTo}
+        setSelectedTo={setSelectedTo}
       />
-      <CatalogList adverts={filteredAdvertsByPrice.slice(0, visibleAdverts)} />
+      <CatalogList
+        adverts={filteredAdvertsByMileage.slice(0, visibleAdverts)}
+      />
       {isLoading ? (
         <Loader />
       ) : (
+        filteredAdvertsByMileage.length > 0 &&
         visibleAdverts < adverts.length && <ButtonLoadMore onClick={loadMore} />
       )}
     </CatalogContainer>
