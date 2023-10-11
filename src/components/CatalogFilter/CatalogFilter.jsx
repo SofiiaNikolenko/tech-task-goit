@@ -11,6 +11,30 @@ import {
 } from './CatalogFilter.style';
 
 const CatalogFilter = () => {
+  const carBrands = [
+    'Buick',
+    'Volvo',
+    'HUMMER',
+    'Subaru',
+    'Mitsubishi',
+    'Nissan',
+    'Lincoln',
+    'GMC',
+    'Hyundai',
+    'MINI',
+    'Bentley',
+    'Mercedes-Benz',
+    'Aston Martin',
+    'Pontiac',
+    'Lamborghini',
+    'Audi',
+    'BMW',
+    'Chevrolet',
+    'Mercedes-Benz',
+    'Chrysler',
+    'Kia',
+    'Land',
+  ];
   const rentPrice = [25, 30, 35, 40, 45, 50, 55, 75, 150, 200, 250, 300, 500];
 
   return (
@@ -22,9 +46,11 @@ const CatalogFilter = () => {
             <FormFilterOption value="All breands" disabled defaultValue>
               All breands
             </FormFilterOption>
-            <FormFilterOption value="option1">Опція 1</FormFilterOption>
-            <FormFilterOption value="option2">Опція 2</FormFilterOption>
-            <FormFilterOption value="option3">Опція 3</FormFilterOption>
+            {carBrands?.map(item => (
+              <FormFilterOption key={item} value={item}>
+                {item}
+              </FormFilterOption>
+            ))}
           </FormFilterSelect>
         </ContainerLabel>
 
