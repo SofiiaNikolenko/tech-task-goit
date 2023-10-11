@@ -6,7 +6,7 @@ export const ContainerHome = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url('https://res.cloudinary.com/dfphjvlb1/image/upload/v1696926349/car/BuickEnclave2008.jpg'); /* Replace 'your-image-url.jpg' with the URL of your background image */
+  background-image: url('https://res.cloudinary.com/dfphjvlb1/image/upload/v1696926349/car/BuickEnclave2008.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
