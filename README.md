@@ -25,8 +25,8 @@ catalog on the page.
 
 - React
 - React Router
-- Axios for API requests
-- Styled Components for styling
+- Axios
+- Styled Components
 - Mockap.io
 
 ## Getting Started
