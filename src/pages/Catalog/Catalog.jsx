@@ -12,6 +12,11 @@ const Catalog = () => {
   const [visibleAdverts, setVisibleAdverts] = useState(8);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [selectedBrand, setSelectedBrand] = useState('All brands');
+  const [selectedPrice, setSelectedPrice] = useState('To $');
+
+  console.log('In catalog brands', selectedBrand);
+
   useEffect(() => {
     axios
       .get('https://652063d7906e276284c46988.mockapi.io/advert')
@@ -29,12 +34,28 @@ const Catalog = () => {
     setVisibleAdverts(prevVisibleAdverts => prevVisibleAdverts + 8);
   };
 
-  console.log(adverts);
+  const filteredAdvertsByBrand =
+    selectedBrand === 'All brands'
+      ? adverts
+      : adverts.filter(ad => ad.make === selectedBrand);
+
+  const filteredAdvertsByPrice =
+    selectedPrice === 'To $'
+      ? filteredAdvertsByBrand
+      : filteredAdvertsByBrand.filter(ad => {
+          const rentalPrice = parseFloat(ad.rentalPrice.replace('$', ''));
+          return rentalPrice === parseFloat(selectedPrice.replace('$', ''));
+        });
 
   return (
     <CatalogContainer>
-      <CatalogFilter />
-      <CatalogList adverts={adverts.slice(0, visibleAdverts)} />
+      <CatalogFilter
+        selectedBrand={selectedBrand}
+        setSelectedBrand={setSelectedBrand}
+        selectedPrice={selectedPrice}
+        setSelectedPrice={setSelectedPrice}
+      />
+      <CatalogList adverts={filteredAdvertsByPrice.slice(0, visibleAdverts)} />
       {isLoading ? (
         <Loader />
       ) : (

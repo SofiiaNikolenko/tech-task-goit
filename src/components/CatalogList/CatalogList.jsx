@@ -3,7 +3,9 @@ import { ListWrapper, CatalogListUl } from './CatalogList.style';
 import CatalogListItem from './CatalogListItem/CatalogListItem';
 
 const CatalogList = ({ adverts }) => {
-  return (
+  return adverts.length === 0 ? (
+    <p>Not found</p>
+  ) : (
     <ListWrapper>
       <CatalogListUl>
         {adverts.map(advert => (
