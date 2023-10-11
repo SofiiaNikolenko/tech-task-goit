@@ -4,7 +4,6 @@ export const FavoriteListWrapper = styled.div`
   font-family: Manrope;
   width: 1184px;
   margin: 0 auto;
-  margin-top: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
